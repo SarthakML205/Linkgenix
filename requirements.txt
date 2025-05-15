@@ -1,0 +1,12 @@
+google-generativeai
+pillow
+python-dotenv
+pymupdf
+fastapi 
+uvicorn
+python-multipart
+huggingface-hub
+streamlit
+streamlit-lottie>=0.0.5
+requests
+watchdog
