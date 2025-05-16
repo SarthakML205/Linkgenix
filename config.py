@@ -10,7 +10,7 @@ HF_TOKEN = os.getenv("HF_TOKEN")
 
 # --- Model Names ---
 DEFAULT_GEMINI_FLASH_MODEL = "gemini-1.5-flash-latest" # Changed from gemini-2.0-flash as it's more common
-DEFAULT_GEMINI_PRO_MODEL = "gemini-1.5-pro-latest"
+DEFAULT_GEMINI_PRO_MODEL = "gemini-1.5-flash-latest"
 
 # --- File Paths ---
 # Assuming 'assests' is relative to the 'src/notebooks' directory for notebooks

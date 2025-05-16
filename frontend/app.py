@@ -41,7 +41,8 @@ def main():
         layout="wide",
         initial_sidebar_state="expanded"
     )
-
+    
+    
     # Initialize session state variables if they don't exist
     if 'current_step' not in st.session_state:
         st.session_state.current_step = 1
@@ -81,8 +82,27 @@ def main():
             reset_session()
             st.rerun()
 
-    # Main content area
-    st.title("LinkedIn Content Generator")
+    # Main content area - Display logo alongside title
+    logo_path = os.path.join(project_root, "src", "assets", "logo.png")
+    
+    # Create a two-column layout for the logo and title
+    logo_col, title_col = st.columns([1, 4])
+    
+    # Display logo in first column with custom dimensions
+    if os.path.exists(logo_path):
+        with logo_col:
+            logo = Image.open(logo_path)
+            # Set both width and height for precise logo sizing
+            logo_width = 100  # Width in pixels
+            logo_height = 100  # Height in pixels
+            st.image(logo, width=logo_width)
+    else:
+        with logo_col:
+            st.warning("Logo not found!")
+    
+    # Display title in second column with vertical alignment
+    with title_col:
+        st.title("LinkedIn Content Generator")
 
     # Step 1: Input & PDF Analysis
     if st.session_state.current_step == 1:
@@ -319,7 +339,7 @@ def step3_optimize_and_finalize():
             with img_col1:
                 try:
                     image = Image.open(io.BytesIO(st.session_state.generated_image))
-                    st.image(image, caption="AI-Generated Image", use_column_width=True)
+                    st.image(image, caption="AI-Generated Image", use_column_width=True, width=200)
                 except Exception as img_err:
                     st.error(f"Error displaying image: {img_err}")
             with img_col2:
