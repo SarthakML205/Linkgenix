@@ -108,7 +108,7 @@ pip install -r requirements.txt
 </p>
 
 <p align="center">
-  <strong>SEO Optimization</strong><br>
+  <strong>Image generation</strong><br>
   <img src="ss\output-2.png" alt="SEO Optimization Output" width="280"/>
 </p>
 
